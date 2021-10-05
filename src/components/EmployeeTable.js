@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import API from "../utils/API";
 import EmployeeCard from "./EmployeeCard/EmployeeCard";
 import Wrapper from "./Wrapper/index";
@@ -33,7 +32,7 @@ class EmployeeTable extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
+        <Title>Employee List</Title>
         {this.mapEmployees()}
       </Wrapper>
     );
