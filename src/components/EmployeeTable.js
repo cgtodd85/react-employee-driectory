@@ -1,5 +1,6 @@
 import React from "react";
 import API from "../utils/API";
+import { Button } from "react-bootstrap";
 import EmployeeCard from "./EmployeeCard/EmployeeCard";
 import Wrapper from "./Wrapper/index";
 import Title from "./Title/index";
@@ -61,6 +62,7 @@ class EmployeeTable extends React.Component {
         nat: "IE",
       },
     ],
+    filteredEmployees: [],
   };
 
   componentDidMount() {
@@ -73,6 +75,15 @@ class EmployeeTable extends React.Component {
       })
       .catch((err) => console.log(err));
   }
+
+  sortByName = () => {
+    const sorted = this.state.employees.sort((a, b) => {
+      if (a.name.first.toLowerCase() < b.name.first.toLowerCase()) return -1;
+      if (a.name.first.toLowerCase() > b.name.first.toLowerCase()) return 1;
+      return 0;
+    });
+    this.setState({ employees: sorted });
+  };
 
   mapEmployees = () => {
     this.state.employees.map((employee) => (
@@ -87,18 +98,21 @@ class EmployeeTable extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <Title>Employee List</Title>
-        {console.log(this.state.employees)}
-        {this.state.employees.map((employee) => (
-          <EmployeeCard
-            name={employee.name.first}
-            picture={employee.picture.medium}
-            age={employee.dob.age}
-            email={employee.email}
-          />
-        ))}
-      </Wrapper>
+        <button>Sort by name</button>
+        <Wrapper>
+          {console.log(this.state.employees)}
+          {this.state.employees.map((employee) => (
+            <EmployeeCard
+              name={employee.name.first}
+              picture={employee.picture.medium}
+              age={employee.dob.age}
+              email={employee.email}
+            />
+          ))}
+        </Wrapper>
+      </div>
     );
   }
 }
