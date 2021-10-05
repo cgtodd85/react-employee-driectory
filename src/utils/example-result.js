@@ -61,3 +61,5 @@ const employeeOne = {
     version: "1.3",
   },
 };
+
+console.log(employeeOne);
