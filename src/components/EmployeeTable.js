@@ -53,10 +53,9 @@ class EmployeeTable extends React.Component {
     return (
       <div>
         <Title>Employee List</Title>
-        <button onClick={this.sortByName}>Sort by name</button>
+        <Button onClick={this.sortByName}>Sort by name</Button>
         <Button onClick={this.filterByMale}>Men Only</Button>
         <Wrapper>
-          {console.log(this.state.employees)}
           {this.state.employees.map((employee) => (
             <EmployeeCard
               name={employee.name.first}

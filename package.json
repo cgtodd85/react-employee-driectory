@@ -1,5 +1,6 @@
 {
   "name": "react-employee-driectory",
+  "homepage": "https://myusername.github.io/react-employee-directory",
   "about": "A simple react app using a free api to simulate a directory of employees",
   "version": "0.1.0",
   "private": true,
