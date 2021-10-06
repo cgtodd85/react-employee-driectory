@@ -52,7 +52,7 @@ class EmployeeTable extends React.Component {
   render() {
     return (
       <div>
-        <Title>Employee List</Title>
+        <Title>Employee List, Cool!</Title>
         <Button onClick={this.sortByName}>Sort by name</Button>
         <Button onClick={this.filterByMale}>Men Only</Button>
         <Wrapper>
