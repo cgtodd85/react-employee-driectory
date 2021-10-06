@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../utils/API";
-import { Button, Header } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import EmployeeCard from "./EmployeeCard/EmployeeCard";
 import Wrapper from "./Wrapper/index";
 import Title from "./Title/index";
