@@ -1,9 +1,10 @@
 import React from "react";
 import API from "../utils/API";
-import { Button } from "react-bootstrap";
+import { Button, Header } from "react-bootstrap";
 import EmployeeCard from "./EmployeeCard/EmployeeCard";
 import Wrapper from "./Wrapper/index";
 import Title from "./Title/index";
+import "./index.css";
 
 class EmployeeTable extends React.Component {
   state = {
@@ -55,8 +56,12 @@ class EmployeeTable extends React.Component {
         <Title>
           Employee List, Cool!<i class="fas fa-users"></i>
         </Title>
-        <Button onClick={this.sortByName}>Sort by name</Button>
-        <Button onClick={this.filterByMale}>Men Only</Button>
+
+        <header>
+          {"   "} Sort options: {"   "}
+          <Button onClick={this.sortByName}>Sort by name</Button>{" "}
+          <Button onClick={this.filterByMale}>Men Only</Button>
+        </header>
         <Wrapper>
           {this.state.employees.map((employee) => (
             <EmployeeCard
